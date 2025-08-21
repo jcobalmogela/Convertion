@@ -51,29 +51,30 @@ export default function BasicGrid() {
         >
           <Grid item xs={12} size={12}>
             <Item sx={{ p: 2 }}>
-              {symbols && Object.keys(symbols).length > 0 ? (
-                <div>
-                  {converted ? (
-                    <Typography variant="h6" sx={{ color: "#7affae" }}>
-                      <p>
-                        {amount} {fromCurrency} ={" "}
-                        <span sx={{ color: "#7affae" }}>
-                          {" "}
-                          {converted.toFixed(2)} {toCurrency}{" "}
-                        </span>
-                      </p>
-                    </Typography>
-                  ) : (
-                    <Typography variant="h6" sx={{ color: "#7affae" }}>
-                      <p>
-                        Please enter an amount and select currencies to convert.
-                      </p>
-                    </Typography>
-                  )}
-                </div>
-              ) : (
-                <CircularProgress sx={{ color: "#7affae" }}></CircularProgress>
-              )}
+    {symbols && Object.keys(symbols).length > 0 ? (
+  <div>
+    {converted ? (
+      <Typography variant="h6" sx={{ color: "#7affae" }}>
+        <p>
+          {amount} {fromCurrency} ={" "}
+          <span style={{ color: "#7affae" }}>
+            {new Intl.NumberFormat("en-US", {
+              minimumFractionDigits: 2,
+              maximumFractionDigits: 2,
+            }).format(converted)}{" "}
+            {toCurrency}
+          </span>
+        </p>
+      </Typography>
+    ) : (
+      <Typography variant="h6" sx={{ color: "#7affae" }}>
+        <p>
+          Please enter an amount and select currencies to convert.
+        </p>
+      </Typography>
+    )}
+  </div>
+) : null}
             </Item>
           </Grid>
           <Grid item xs={12} md={4} size={4}>
