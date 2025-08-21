@@ -1,0 +1,21 @@
+.App{
+  background-color: #1d1c1c;
+  
+
+}
+.App-box {
+  display: flex;
+ flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 97vh;
+  padding: 20px;
+}
+
+@media (max-width: 600px) {
+  .App-box {
+    height: 100vh;
+    padding: 10px;
+    margin-top:70px;
+  }
+}
