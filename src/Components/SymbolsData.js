@@ -21,7 +21,7 @@ function SymbolsFetch({
           "https://api.currencyfreaks.com/v2.0/currency-symbols",
           {
             params: {
-              access_key: "35ca18972eda4714a6e02820f4831c30",
+              access_key: "d5f6f53d5ced41f49e2725d30b664586",
             },
           }
         );
